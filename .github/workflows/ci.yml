@@ -49,7 +49,7 @@ jobs:
         run: ruff format --check .
 
       - name: Tests
-        run: pytest -q -W ignore::UserWarning
+        run: pytest -q -W ignore::UserWarning --cov=. --cov-report=term:skip-covered
 
       # D6: the coverage badge is a claim; this makes it enforced. 88 is set
       # just under the measured 90 so ordinary edits cannot silently drop it,
