@@ -127,7 +127,16 @@ jobs:
         run: python examples/run_demo.py
 
       - name: Summarise gates
-        run: python -c "import json;d=json.load(open('results/benchmark.json'));[print(f\"{g}: {'PASS' if d['gates'][g]['passed'] else 'FAIL'} :: {d['gates'][g]['reason']}\") for g in ('G1','G2','G3','G5')];print('invariant_checks_performed =', d.get('invariant_checks_performed'))"
+        run: |
+          python - <<'PY'
+          import json
+          d = json.load(open('results/benchmark.json', encoding='utf-8'))
+          for g in ('G1', 'G2', 'G3', 'G5'):
+              gate = d['gates'][g]
+              status = 'PASS' if gate['passed'] else 'FAIL'
+              print(f"{g}: {status} :: {gate['reason']}")
+          print('invariant_checks_performed =', d.get('invariant_checks_performed'))
+          PY
 
       - name: Upload full benchmark
         uses: actions/upload-artifact@v4
