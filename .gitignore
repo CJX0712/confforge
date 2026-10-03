@@ -1,0 +1,42 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments (the project venv is never committed)
+.venv/
+venv/
+env/
+
+# Test / coverage artefacts
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+junit*.xml
+
+# Benchmark output.
+#
+# results/ IS committed: every number in README.md and in the gate table is
+# quoted from results/benchmark.json, so shipping the report without the
+# artefact would make the claims unverifiable. Regenerate with `make demo`;
+# never hand-edit. Local scratch runs (*.tmp) stay ignored.
+results/*.tmp
+results/*.partial
+*.log
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

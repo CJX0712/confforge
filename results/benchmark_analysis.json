@@ -1,0 +1,1127 @@
+{
+  "ablation_summary": {
+    "no_aci": {
+      "errors": [],
+      "max_relative_width_change": 0.0010685557743675173,
+      "mean_relative_width_change": -0.010137375700889703,
+      "n_cells": 2,
+      "n_error": 0,
+      "n_ok": 2,
+      "verdict": "refuted"
+    },
+    "no_cqr": {
+      "errors": [],
+      "max_relative_width_change": 0.07179199632022797,
+      "mean_relative_width_change": 0.02136501057641564,
+      "n_cells": 2,
+      "n_error": 0,
+      "n_ok": 2,
+      "verdict": "confirmed"
+    },
+    "no_mondrian": {
+      "errors": [],
+      "max_relative_width_change": 0.13317113544000414,
+      "mean_relative_width_change": 0.05102726204052802,
+      "n_cells": 2,
+      "n_error": 0,
+      "n_ok": 2,
+      "verdict": "confirmed"
+    }
+  },
+  "ablations": [
+    {
+      "ablated": {
+        "adapted_alpha": 0.099,
+        "cov_w": 0.1587639751552795,
+        "coverage": 0.9005,
+        "mean_width": 2.8440962339740743,
+        "winkler": 3.965827628317756
+      },
+      "arm": "no_mondrian",
+      "confirmed": true,
+      "cov_w_change": 0.1241369560657053,
+      "coverage_change": 0.008499999999999952,
+      "dataset": "grouped_hetero",
+      "full": {
+        "adapted_alpha": 0.099,
+        "cov_w": 0.03462701908957422,
+        "coverage": 0.892,
+        "mean_width": 2.509855877038138,
+        "winkler": 3.303610467540291
+      },
+      "hypothesis": "disabling per-group calibration widens intervals on grouped data",
+      "relative_width_change": 0.13317113544000414,
+      "seed": 11,
+      "status": "ok"
+    },
+    {
+      "ablated": {
+        "adapted_alpha": 0.101,
+        "cov_w": 0.08389269051321924,
+        "coverage": 0.9145,
+        "mean_width": 3.1236762543068735,
+        "winkler": 4.091089916668717
+      },
+      "arm": "no_mondrian",
+      "confirmed": false,
+      "cov_w_change": 0.043545878693623585,
+      "coverage_change": -0.009000000000000008,
+      "dataset": "heteroscedastic",
+      "full": {
+        "adapted_alpha": 0.101,
+        "cov_w": 0.04034681181959565,
+        "coverage": 0.9235,
+        "mean_width": 3.22399608758709,
+        "winkler": 3.881481465827992
+      },
+      "hypothesis": "disabling per-group calibration widens intervals on grouped data",
+      "relative_width_change": -0.031116611358948092,
+      "seed": 11,
+      "status": "ok"
+    },
+    {
+      "ablated": {
+        "adapted_alpha": null,
+        "cov_w": 0.03934681181959565,
+        "coverage": 0.9235,
+        "mean_width": 3.2274411072230196,
+        "winkler": 3.889411825003699
+      },
+      "arm": "no_aci",
+      "confirmed": false,
+      "cov_w_change": -0.0010000000000000009,
+      "coverage_change": 0.0,
+      "dataset": "heteroscedastic",
+      "full": {
+        "adapted_alpha": 0.101,
+        "cov_w": 0.04034681181959565,
+        "coverage": 0.9235,
+        "mean_width": 3.22399608758709,
+        "winkler": 3.881481465827992
+      },
+      "hypothesis": "with a stationary validation split the nominal alpha is already correct, so the arm is expected to be near-neutral here and is instead judged on the drift stream",
+      "relative_width_change": 0.0010685557743675173,
+      "seed": 11,
+      "status": "ok"
+    },
+    {
+      "ablated": {
+        "adapted_alpha": null,
+        "cov_w": 0.06619718309859157,
+        "coverage": 0.88,
+        "mean_width": 1.4277389844374995,
+        "winkler": 1.9911501190267895
+      },
+      "arm": "no_aci",
+      "confirmed": false,
+      "cov_w_change": 0.02094366197183095,
+      "coverage_change": -0.009000000000000008,
+      "dataset": "nonlinear",
+      "full": {
+        "adapted_alpha": 0.097,
+        "cov_w": 0.04525352112676062,
+        "coverage": 0.889,
+        "mean_width": 1.4588762279015814,
+        "winkler": 1.9953774162193494
+      },
+      "hypothesis": "with a stationary validation split the nominal alpha is already correct, so the arm is expected to be near-neutral here and is instead judged on the drift stream",
+      "relative_width_change": -0.021343307176146922,
+      "seed": 11,
+      "status": "ok"
+    },
+    {
+      "ablated": {
+        "adapted_alpha": 0.097,
+        "cov_w": 0.0407777777777778,
+        "coverage": 0.8915,
+        "mean_width": 1.5636118646867598,
+        "winkler": 2.2856604242542473
+      },
+      "arm": "no_cqr",
+      "confirmed": true,
+      "cov_w_change": -0.004475743348982819,
+      "coverage_change": 0.0024999999999999467,
+      "dataset": "nonlinear",
+      "full": {
+        "adapted_alpha": 0.097,
+        "cov_w": 0.04525352112676062,
+        "coverage": 0.889,
+        "mean_width": 1.4588762279015814,
+        "winkler": 1.9953774162193494
+      },
+      "hypothesis": "replacing the CQR anchor with a split anchor loses the ability to shrink, so width should grow wherever model error varies with x",
+      "relative_width_change": 0.07179199632022797,
+      "seed": 11,
+      "status": "ok"
+    },
+    {
+      "ablated": {
+        "adapted_alpha": 0.08199999999999999,
+        "cov_w": 0.02810558069381608,
+        "coverage": 0.9145,
+        "mean_width": 1.2051763675266476,
+        "winkler": 1.7125988925550055
+      },
+      "arm": "no_cqr",
+      "confirmed": false,
+      "cov_w_change": -0.0013376011243656505,
+      "coverage_change": -0.014500000000000068,
+      "dataset": "homoscedastic",
+      "full": {
+        "adapted_alpha": 0.08199999999999999,
+        "cov_w": 0.02944318181818173,
+        "coverage": 0.929,
+        "mean_width": 1.2412495305603348,
+        "winkler": 1.598003907617091
+      },
+      "hypothesis": "replacing the CQR anchor with a split anchor loses the ability to shrink, so width should grow wherever model error varies with x",
+      "relative_width_change": -0.02906197516739668,
+      "seed": 11,
+      "status": "ok"
+    }
+  ],
+  "aggregates": {
+    "by_method": {
+      "aci": {
+        "coverage_mean": 0.8510277777777778,
+        "coverage_std": 0.1362857977664566,
+        "n_cells": 18,
+        "width_mean": 1.9116442553453912,
+        "width_std": 0.8551436520116773,
+        "winkler_mean": 4.491800187132325
+      },
+      "cqr": {
+        "coverage_mean": 0.8590277777777777,
+        "coverage_std": 0.12041265532213961,
+        "n_cells": 18,
+        "width_mean": 1.8192907875001103,
+        "width_std": 0.7377442975650277,
+        "winkler_mean": 3.6284083331053196
+      },
+      "mapie_cqr": {
+        "coverage_mean": 0.8588055555555556,
+        "coverage_std": 0.112439012961705,
+        "n_cells": 18,
+        "width_mean": 2.641808276151565,
+        "width_std": 0.6496275187518997,
+        "winkler_mean": 4.5606015554653005
+      },
+      "mapie_split": {
+        "coverage_mean": 0.8510277777777778,
+        "coverage_std": 0.1362857977664566,
+        "n_cells": 18,
+        "width_mean": 1.9116442553453912,
+        "width_std": 0.8551436520116773,
+        "winkler_mean": 4.491800187132325
+      },
+      "mondrian": {
+        "coverage_mean": 0.8655277777777777,
+        "coverage_std": 0.1246900014059559,
+        "n_cells": 18,
+        "width_mean": 1.8597766030566794,
+        "width_std": 0.6928494144508596,
+        "winkler_mean": 4.084909141338153
+      },
+      "split_absolute": {
+        "coverage_mean": 0.8510277777777778,
+        "coverage_std": 0.1362857977664566,
+        "n_cells": 18,
+        "width_mean": 1.9116442553453912,
+        "width_std": 0.8551436520116773,
+        "winkler_mean": 4.491800187132325
+      },
+      "split_normalized": {
+        "coverage_mean": 0.8536666666666667,
+        "coverage_std": 0.1315208052827469,
+        "n_cells": 18,
+        "width_mean": 1.8898200105427954,
+        "width_std": 0.7307147715583698,
+        "winkler_mean": 4.243443014124042
+      },
+      "vennfuse": {
+        "coverage_mean": 0.876,
+        "coverage_std": 0.0964994242930438,
+        "n_cells": 18,
+        "width_mean": 1.8699346839730862,
+        "width_std": 0.7233401593732437,
+        "winkler_mean": 3.5324799979209827
+      }
+    },
+    "by_method_dataset": {
+      "aci|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.551,
+        "coverage_std": 0.028340195247504328,
+        "dataset": "covariate_shift",
+        "method": "aci",
+        "n_seeds": 3,
+        "width_mean": 1.164815848872913,
+        "width_std": 0.04879048958847144,
+        "winkler_mean": 12.395673496221846,
+        "winkler_std": 1.6378311172859656
+      },
+      "aci|grouped_hetero": {
+        "cov_w_mean": 0.16899836690255854,
+        "cov_w_std": 0.020773720318889785,
+        "coverage_mean": 0.895,
+        "coverage_std": 0.009899494936611674,
+        "dataset": "grouped_hetero",
+        "method": "aci",
+        "n_seeds": 3,
+        "width_mean": 2.7284479925134235,
+        "width_std": 0.09498561861056437,
+        "winkler_mean": 3.937155962600432,
+        "winkler_std": 0.023931442148951886
+      },
+      "aci|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9025,
+        "coverage_std": 0.008031189202104492,
+        "dataset": "heteroscedastic",
+        "method": "aci",
+        "n_seeds": 3,
+        "width_mean": 3.3936874160660366,
+        "width_std": 0.2102626126031789,
+        "winkler_mean": 4.884388100465535,
+        "winkler_std": 0.1946049717912053
+      },
+      "aci|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9035000000000001,
+        "coverage_std": 0.010962055768270229,
+        "dataset": "homoscedastic",
+        "method": "aci",
+        "n_seeds": 3,
+        "width_mean": 1.17254190799172,
+        "width_std": 0.0358163097801345,
+        "winkler_mean": 1.6169485297394903,
+        "winkler_std": 0.011472381948149936
+      },
+      "aci|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9049999999999999,
+        "coverage_std": 0.018225440095280734,
+        "dataset": "nonlinear",
+        "method": "aci",
+        "n_seeds": 3,
+        "width_mean": 1.6040942938391032,
+        "width_std": 0.060345636996903235,
+        "winkler_mean": 2.4195548540814253,
+        "winkler_std": 0.03315718274034068
+      },
+      "aci|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9491666666666666,
+        "coverage_std": 0.011301425672109776,
+        "dataset": "small_calib",
+        "method": "aci",
+        "n_seeds": 3,
+        "width_mean": 1.4062780727891504,
+        "width_std": 0.09725873979306082,
+        "winkler_mean": 1.6970801796852177,
+        "winkler_std": 0.07863094143401259
+      },
+      "cqr|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.599,
+        "coverage_std": 0.05849358939234283,
+        "dataset": "covariate_shift",
+        "method": "cqr",
+        "n_seeds": 3,
+        "width_mean": 1.223037057288867,
+        "width_std": 0.2815766186115932,
+        "winkler_mean": 8.728317694052622,
+        "winkler_std": 1.8016692210453806
+      },
+      "cqr|grouped_hetero": {
+        "cov_w_mean": 0.16070219808829547,
+        "cov_w_std": 0.007855377695972644,
+        "coverage_mean": 0.8949999999999999,
+        "coverage_std": 0.0033416562759605675,
+        "dataset": "grouped_hetero",
+        "method": "cqr",
+        "n_seeds": 3,
+        "width_mean": 2.7526881144054296,
+        "width_std": 0.04023679908220941,
+        "winkler_mean": 3.9447456755429484,
+        "winkler_std": 0.012227623018797292
+      },
+      "cqr|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.902,
+        "coverage_std": 0.009027735042633893,
+        "dataset": "heteroscedastic",
+        "method": "cqr",
+        "n_seeds": 3,
+        "width_mean": 2.9065539435941226,
+        "width_std": 0.1535654522728547,
+        "winkler_mean": 3.991700798660492,
+        "winkler_std": 0.09795754162738352
+      },
+      "cqr|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9083333333333333,
+        "coverage_std": 0.006381396573025531,
+        "dataset": "homoscedastic",
+        "method": "cqr",
+        "n_seeds": 3,
+        "width_mean": 1.169300189318706,
+        "width_std": 0.026959565821718948,
+        "winkler_mean": 1.5233098813949677,
+        "winkler_std": 0.020333041946426485
+      },
+      "cqr|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9015,
+        "coverage_std": 0.008640987597877155,
+        "dataset": "nonlinear",
+        "method": "cqr",
+        "n_seeds": 3,
+        "width_mean": 1.489519591216905,
+        "width_std": 0.03717723372620293,
+        "winkler_mean": 2.02080951800289,
+        "winkler_std": 0.03281779384756534
+      },
+      "cqr|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9483333333333333,
+        "coverage_std": 0.02000555478416485,
+        "dataset": "small_calib",
+        "method": "cqr",
+        "n_seeds": 3,
+        "width_mean": 1.374645829176633,
+        "width_std": 0.1454921871149399,
+        "winkler_mean": 1.5615664309779993,
+        "winkler_std": 0.08843606257309732
+      },
+      "mapie_cqr|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.6145,
+        "coverage_std": 0.04295928304802117,
+        "dataset": "covariate_shift",
+        "method": "mapie_cqr",
+        "n_seeds": 3,
+        "width_mean": 3.4598177678491595,
+        "width_std": 0.18722550191369658,
+        "winkler_mean": 11.466000128530398,
+        "winkler_std": 2.3946805323545193
+      },
+      "mapie_cqr|grouped_hetero": {
+        "cov_w_mean": 0.15079254252646598,
+        "cov_w_std": 0.014941793459339662,
+        "coverage_mean": 0.8930000000000001,
+        "coverage_std": 0.008256310717667222,
+        "dataset": "grouped_hetero",
+        "method": "mapie_cqr",
+        "n_seeds": 3,
+        "width_mean": 3.091098232679657,
+        "width_std": 0.09837155755486986,
+        "winkler_mean": 4.33220948546927,
+        "winkler_std": 0.05495933553882911
+      },
+      "mapie_cqr|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9056666666666667,
+        "coverage_std": 0.011440668201153687,
+        "dataset": "heteroscedastic",
+        "method": "mapie_cqr",
+        "n_seeds": 3,
+        "width_mean": 3.1096334861964814,
+        "width_std": 0.0805141599747818,
+        "winkler_mean": 4.043656062597159,
+        "winkler_std": 0.18617975056039632
+      },
+      "mapie_cqr|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.8871666666666665,
+        "coverage_std": 0.0030912061651652374,
+        "dataset": "homoscedastic",
+        "method": "mapie_cqr",
+        "n_seeds": 3,
+        "width_mean": 1.7090474093138612,
+        "width_std": 0.06700450425965748,
+        "winkler_mean": 2.206181562424572,
+        "winkler_std": 0.04565042770355569
+      },
+      "mapie_cqr|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9065,
+        "coverage_std": 0.008154753215150029,
+        "dataset": "nonlinear",
+        "method": "mapie_cqr",
+        "n_seeds": 3,
+        "width_mean": 2.540750205240688,
+        "width_std": 0.0924432205889325,
+        "winkler_mean": 3.123005544363935,
+        "winkler_std": 0.09311742540170141
+      },
+      "mapie_cqr|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9460000000000001,
+        "coverage_std": 0.0014719601443879506,
+        "dataset": "small_calib",
+        "method": "mapie_cqr",
+        "n_seeds": 3,
+        "width_mean": 1.9405025556295392,
+        "width_std": 0.07681498226648271,
+        "winkler_mean": 2.1925565494064685,
+        "winkler_std": 0.09207636811028433
+      },
+      "mapie_split|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.551,
+        "coverage_std": 0.028340195247504328,
+        "dataset": "covariate_shift",
+        "method": "mapie_split",
+        "n_seeds": 3,
+        "width_mean": 1.164815848872913,
+        "width_std": 0.04879048958847144,
+        "winkler_mean": 12.395673496221846,
+        "winkler_std": 1.6378311172859656
+      },
+      "mapie_split|grouped_hetero": {
+        "cov_w_mean": 0.16899836690255854,
+        "cov_w_std": 0.020773720318889785,
+        "coverage_mean": 0.895,
+        "coverage_std": 0.009899494936611674,
+        "dataset": "grouped_hetero",
+        "method": "mapie_split",
+        "n_seeds": 3,
+        "width_mean": 2.7284479925134235,
+        "width_std": 0.09498561861056437,
+        "winkler_mean": 3.937155962600432,
+        "winkler_std": 0.023931442148951886
+      },
+      "mapie_split|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9025,
+        "coverage_std": 0.008031189202104492,
+        "dataset": "heteroscedastic",
+        "method": "mapie_split",
+        "n_seeds": 3,
+        "width_mean": 3.3936874160660366,
+        "width_std": 0.2102626126031789,
+        "winkler_mean": 4.884388100465535,
+        "winkler_std": 0.1946049717912053
+      },
+      "mapie_split|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9035000000000001,
+        "coverage_std": 0.010962055768270229,
+        "dataset": "homoscedastic",
+        "method": "mapie_split",
+        "n_seeds": 3,
+        "width_mean": 1.17254190799172,
+        "width_std": 0.0358163097801345,
+        "winkler_mean": 1.6169485297394903,
+        "winkler_std": 0.011472381948149936
+      },
+      "mapie_split|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9049999999999999,
+        "coverage_std": 0.018225440095280734,
+        "dataset": "nonlinear",
+        "method": "mapie_split",
+        "n_seeds": 3,
+        "width_mean": 1.6040942938391032,
+        "width_std": 0.060345636996903235,
+        "winkler_mean": 2.4195548540814253,
+        "winkler_std": 0.03315718274034068
+      },
+      "mapie_split|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9491666666666666,
+        "coverage_std": 0.011301425672109776,
+        "dataset": "small_calib",
+        "method": "mapie_split",
+        "n_seeds": 3,
+        "width_mean": 1.4062780727891504,
+        "width_std": 0.09725873979306082,
+        "winkler_mean": 1.6970801796852177,
+        "winkler_std": 0.07863094143401259
+      },
+      "mondrian|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.5935,
+        "coverage_std": 0.05189091121445707,
+        "dataset": "covariate_shift",
+        "method": "mondrian",
+        "n_seeds": 3,
+        "width_mean": 1.3592605585200772,
+        "width_std": 0.1369169961087572,
+        "winkler_mean": 11.762701964868526,
+        "winkler_std": 1.8685733526874329
+      },
+      "mondrian|grouped_hetero": {
+        "cov_w_mean": 0.04135759077463108,
+        "cov_w_std": 0.011970679446421375,
+        "coverage_mean": 0.9138333333333334,
+        "coverage_std": 0.007961713941664141,
+        "dataset": "grouped_hetero",
+        "method": "mondrian",
+        "n_seeds": 3,
+        "width_mean": 2.455736017088386,
+        "width_std": 0.06822716024715066,
+        "winkler_mean": 3.1011657837710227,
+        "winkler_std": 0.036303000138859134
+      },
+      "mondrian|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9128333333333334,
+        "coverage_std": 0.007586537784494036,
+        "dataset": "heteroscedastic",
+        "method": "mondrian",
+        "n_seeds": 3,
+        "width_mean": 3.0901210628601654,
+        "width_std": 0.15947361922860379,
+        "winkler_mean": 3.983738105014909,
+        "winkler_std": 0.11656427242530251
+      },
+      "mondrian|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9083333333333332,
+        "coverage_std": 0.006249444419750922,
+        "dataset": "homoscedastic",
+        "method": "mondrian",
+        "n_seeds": 3,
+        "width_mean": 1.1935641421016927,
+        "width_std": 0.03288059323198911,
+        "winkler_mean": 1.6140753601943392,
+        "winkler_std": 0.009016216289997976
+      },
+      "mondrian|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9153333333333333,
+        "coverage_std": 0.01961433715989974,
+        "dataset": "nonlinear",
+        "method": "mondrian",
+        "n_seeds": 3,
+        "width_mean": 1.656727433628971,
+        "width_std": 0.0782996650059006,
+        "winkler_mean": 2.352356702554196,
+        "winkler_std": 0.060138245124066125
+      },
+      "mondrian|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9493333333333333,
+        "coverage_std": 0.011897712198383127,
+        "dataset": "small_calib",
+        "method": "mondrian",
+        "n_seeds": 3,
+        "width_mean": 1.4032504041407838,
+        "width_std": 0.1062132233531823,
+        "winkler_mean": 1.6954169316259238,
+        "winkler_std": 0.08378220801986806
+      },
+      "split_absolute|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.551,
+        "coverage_std": 0.028340195247504328,
+        "dataset": "covariate_shift",
+        "method": "split_absolute",
+        "n_seeds": 3,
+        "width_mean": 1.164815848872913,
+        "width_std": 0.04879048958847144,
+        "winkler_mean": 12.395673496221846,
+        "winkler_std": 1.6378311172859656
+      },
+      "split_absolute|grouped_hetero": {
+        "cov_w_mean": 0.16899836690255854,
+        "cov_w_std": 0.020773720318889785,
+        "coverage_mean": 0.895,
+        "coverage_std": 0.009899494936611674,
+        "dataset": "grouped_hetero",
+        "method": "split_absolute",
+        "n_seeds": 3,
+        "width_mean": 2.7284479925134235,
+        "width_std": 0.09498561861056437,
+        "winkler_mean": 3.937155962600432,
+        "winkler_std": 0.023931442148951886
+      },
+      "split_absolute|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9025,
+        "coverage_std": 0.008031189202104492,
+        "dataset": "heteroscedastic",
+        "method": "split_absolute",
+        "n_seeds": 3,
+        "width_mean": 3.3936874160660366,
+        "width_std": 0.2102626126031789,
+        "winkler_mean": 4.884388100465535,
+        "winkler_std": 0.1946049717912053
+      },
+      "split_absolute|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9035000000000001,
+        "coverage_std": 0.010962055768270229,
+        "dataset": "homoscedastic",
+        "method": "split_absolute",
+        "n_seeds": 3,
+        "width_mean": 1.17254190799172,
+        "width_std": 0.0358163097801345,
+        "winkler_mean": 1.6169485297394903,
+        "winkler_std": 0.011472381948149936
+      },
+      "split_absolute|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9049999999999999,
+        "coverage_std": 0.018225440095280734,
+        "dataset": "nonlinear",
+        "method": "split_absolute",
+        "n_seeds": 3,
+        "width_mean": 1.6040942938391032,
+        "width_std": 0.060345636996903235,
+        "winkler_mean": 2.4195548540814253,
+        "winkler_std": 0.03315718274034068
+      },
+      "split_absolute|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9491666666666666,
+        "coverage_std": 0.011301425672109776,
+        "dataset": "small_calib",
+        "method": "split_absolute",
+        "n_seeds": 3,
+        "width_mean": 1.4062780727891504,
+        "width_std": 0.09725873979306082,
+        "winkler_mean": 1.6970801796852177,
+        "winkler_std": 0.07863094143401259
+      },
+      "split_normalized|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.5655,
+        "coverage_std": 0.02834019524750432,
+        "dataset": "covariate_shift",
+        "method": "split_normalized",
+        "n_seeds": 3,
+        "width_mean": 1.2583233697599259,
+        "width_std": 0.13294462546799013,
+        "winkler_mean": 11.727322478594418,
+        "winkler_std": 1.2549187953799932
+      },
+      "split_normalized|grouped_hetero": {
+        "cov_w_mean": 0.1633610249856019,
+        "cov_w_std": 0.02419975562564524,
+        "coverage_mean": 0.8946666666666667,
+        "coverage_std": 0.012912095965497696,
+        "dataset": "grouped_hetero",
+        "method": "split_normalized",
+        "n_seeds": 3,
+        "width_mean": 2.784036342839297,
+        "width_std": 0.1588115357369435,
+        "winkler_mean": 3.997867235205533,
+        "winkler_std": 0.027799120140229287
+      },
+      "split_normalized|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9006666666666666,
+        "coverage_std": 0.011115554667022055,
+        "dataset": "heteroscedastic",
+        "method": "split_normalized",
+        "n_seeds": 3,
+        "width_mean": 2.982560267711174,
+        "width_std": 0.19389927672738888,
+        "winkler_mean": 4.049962124889363,
+        "winkler_std": 0.15289503983994576
+      },
+      "split_normalized|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9005,
+        "coverage_std": 0.01283225103661345,
+        "dataset": "homoscedastic",
+        "method": "split_normalized",
+        "n_seeds": 3,
+        "width_mean": 1.1864489422842488,
+        "width_std": 0.05143576257700359,
+        "winkler_mean": 1.6139051742292956,
+        "winkler_std": 0.0331332362883704
+      },
+      "split_normalized|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9041666666666668,
+        "coverage_std": 0.01084998719917318,
+        "dataset": "nonlinear",
+        "method": "split_normalized",
+        "n_seeds": 3,
+        "width_mean": 1.6008908553989283,
+        "width_std": 0.03575681772700428,
+        "winkler_mean": 2.3143931461145244,
+        "winkler_std": 0.042627904966418585
+      },
+      "split_normalized|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9565,
+        "coverage_std": 0.012734467663262082,
+        "dataset": "small_calib",
+        "method": "split_normalized",
+        "n_seeds": 3,
+        "width_mean": 1.526660285263197,
+        "width_std": 0.12907339537513748,
+        "winkler_mean": 1.7572079257111168,
+        "winkler_std": 0.07467257909509864
+      },
+      "vennfuse|covariate_shift": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.668,
+        "coverage_std": 0.03755218591063199,
+        "dataset": "covariate_shift",
+        "method": "vennfuse",
+        "n_seeds": 3,
+        "width_mean": 1.4356029493704445,
+        "width_std": 0.2099949287817196,
+        "winkler_mean": 8.999675547631744,
+        "winkler_std": 2.307309214644108
+      },
+      "vennfuse|grouped_hetero": {
+        "cov_w_mean": 0.03216220133804948,
+        "cov_w_std": 0.005463862985913807,
+        "coverage_mean": 0.9093333333333332,
+        "coverage_std": 0.022425184255405517,
+        "dataset": "grouped_hetero",
+        "method": "vennfuse",
+        "n_seeds": 3,
+        "width_mean": 2.6209590299948213,
+        "width_std": 0.20209371043195526,
+        "winkler_mean": 3.27996070169943,
+        "winkler_std": 0.09314896155839575
+      },
+      "vennfuse|heteroscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9103333333333333,
+        "coverage_std": 0.011032779442290254,
+        "dataset": "heteroscedastic",
+        "method": "vennfuse",
+        "n_seeds": 3,
+        "width_mean": 3.073046357050139,
+        "width_std": 0.12107636083851592,
+        "winkler_mean": 3.800000385142296,
+        "winkler_std": 0.05862954645537798
+      },
+      "vennfuse|homoscedastic": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9168333333333334,
+        "coverage_std": 0.008720983634634102,
+        "dataset": "homoscedastic",
+        "method": "vennfuse",
+        "n_seeds": 3,
+        "width_mean": 1.2079553630314217,
+        "width_std": 0.025836711947507737,
+        "winkler_mean": 1.5540920100955151,
+        "winkler_std": 0.03922065484818418
+      },
+      "vennfuse|nonlinear": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9031666666666666,
+        "coverage_std": 0.013053309499467503,
+        "dataset": "nonlinear",
+        "method": "vennfuse",
+        "n_seeds": 3,
+        "width_mean": 1.500499797697828,
+        "width_std": 0.04804636710936322,
+        "winkler_mean": 1.9833379998354754,
+        "winkler_std": 0.009220117789257019
+      },
+      "vennfuse|small_calib": {
+        "cov_w_mean": NaN,
+        "cov_w_std": NaN,
+        "coverage_mean": 0.9483333333333333,
+        "coverage_std": 0.02000555478416485,
+        "dataset": "small_calib",
+        "method": "vennfuse",
+        "n_seeds": 3,
+        "width_mean": 1.381544606693862,
+        "width_std": 0.15286516542663334,
+        "winkler_mean": 1.5778133431214354,
+        "winkler_std": 0.08292187722596232
+      }
+    }
+  },
+  "config": {
+    "alpha": 0.1,
+    "datasets": [
+      "homoscedastic",
+      "heteroscedastic",
+      "grouped_hetero",
+      "covariate_shift",
+      "small_calib",
+      "nonlinear"
+    ],
+    "elapsed_sec": 110.65961940000125,
+    "environment": {
+      "implementation": "CPython",
+      "mapie": {
+        "available": true,
+        "reason": "",
+        "version": "1.5.0"
+      },
+      "numpy": "2.5.3",
+      "platform": "Windows-11-10.0.29671-SP0",
+      "python": "3.13.14",
+      "scikit_learn": "1.9.1"
+    },
+    "mapie": {
+      "available": true,
+      "reason": "",
+      "version": "1.5.0"
+    },
+    "methods": [
+      "split_absolute",
+      "split_normalized",
+      "cqr",
+      "mondrian",
+      "vennfuse",
+      "mapie_split",
+      "mapie_cqr",
+      "aci"
+    ],
+    "n_calib": 500,
+    "n_test": 2000,
+    "n_train": 1500,
+    "n_val": 500,
+    "seed": 20261004,
+    "seeds": [
+      11,
+      23,
+      37
+    ]
+  },
+  "drift": {
+    "aci_mean_width": 1.3179832309451236,
+    "aci_tail_coverage": 0.8833333333333333,
+    "aci_tail_coverage_std": 0.021245914639969915,
+    "alpha_final_mean": 0.0666666666666667,
+    "coverage_gain": 0.03750000000000009,
+    "drift_factor": 1.2,
+    "fixed_mean_width": 1.1725419079917203,
+    "fixed_tail_coverage": 0.8458333333333332,
+    "fixed_tail_coverage_std": 0.015590239111558123,
+    "n_seeds": 3,
+    "note": "seed-averaged: the per-seed tail window is small enough that a single-seed comparison against a 3pp threshold is dominated by noise",
+    "per_seed": [
+      {
+        "aci_mean_width": 1.4466732544313299,
+        "aci_tail_coverage": 0.9125,
+        "alpha_final": 0.040000000000000084,
+        "alpha_start": 0.1,
+        "coverage_gain": 0.08750000000000002,
+        "drift_factor": 1.2,
+        "drift_index": 200,
+        "fixed_mean_width": 1.1233271255937631,
+        "fixed_tail_coverage": 0.825,
+        "n_steps": 400,
+        "n_updates": 400,
+        "seed": 11,
+        "tail_start": 320,
+        "target_alpha": 0.1
+      },
+      {
+        "aci_mean_width": 1.2754664768362143,
+        "aci_tail_coverage": 0.8625,
+        "alpha_final": 0.06999999999999998,
+        "alpha_start": 0.1,
+        "coverage_gain": 0.012500000000000067,
+        "drift_factor": 1.2,
+        "drift_index": 200,
+        "fixed_mean_width": 1.1867742828272838,
+        "fixed_tail_coverage": 0.85,
+        "n_steps": 400,
+        "n_updates": 400,
+        "seed": 23,
+        "tail_start": 320,
+        "target_alpha": 0.1
+      },
+      {
+        "aci_mean_width": 1.2318099615678264,
+        "aci_tail_coverage": 0.875,
+        "alpha_final": 0.09,
+        "alpha_start": 0.1,
+        "coverage_gain": 0.012499999999999956,
+        "drift_factor": 1.2,
+        "drift_index": 200,
+        "fixed_mean_width": 1.2075243155541142,
+        "fixed_tail_coverage": 0.8625,
+        "n_steps": 400,
+        "n_updates": 400,
+        "seed": 37,
+        "tail_start": 320,
+        "target_alpha": 0.1
+      }
+    ],
+    "seeds": [
+      11,
+      23,
+      37
+    ],
+    "target_alpha": 0.1,
+    "width_ratio": 1.1240393387751137
+  },
+  "elapsed_sec": 110.65961940000125,
+  "environment": {
+    "implementation": "CPython",
+    "mapie": {
+      "available": true,
+      "reason": "",
+      "version": "1.5.0"
+    },
+    "numpy": "2.5.3",
+    "platform": "Windows-11-10.0.29671-SP0",
+    "python": "3.13.14",
+    "scikit_learn": "1.9.1"
+  },
+  "gates": {
+    "G1": {
+      "baseline_mean_width": 2.2246929026025706,
+      "detail": {
+        "covariate_shift": {
+          "baseline_coverage": 0.551,
+          "flagship_coverage": 0.668,
+          "reason": "coverage outside nominal+/-0.03: vennfuse=0.6680, split_absolute=0.5510",
+          "status": "skipped"
+        },
+        "grouped_hetero": {
+          "baseline_coverage": 0.895,
+          "baseline_width": 2.7284479925134235,
+          "flagship_coverage": 0.9093333333333332,
+          "flagship_width": 2.6209590299948213,
+          "relative_width": -0.0393956428026265,
+          "status": "included"
+        },
+        "heteroscedastic": {
+          "baseline_coverage": 0.9025,
+          "baseline_width": 3.3936874160660366,
+          "flagship_coverage": 0.9103333333333333,
+          "flagship_width": 3.073046357050139,
+          "relative_width": -0.09448161238950666,
+          "status": "included"
+        },
+        "homoscedastic": {
+          "baseline_coverage": 0.9035000000000001,
+          "baseline_width": 1.17254190799172,
+          "flagship_coverage": 0.9168333333333334,
+          "flagship_width": 1.2079553630314217,
+          "relative_width": 0.03020229366501388,
+          "status": "included"
+        },
+        "nonlinear": {
+          "baseline_coverage": 0.9049999999999999,
+          "baseline_width": 1.6040942938391032,
+          "flagship_coverage": 0.9031666666666666,
+          "flagship_width": 1.500499797697828,
+          "relative_width": -0.0645813008244926,
+          "status": "included"
+        },
+        "small_calib": {
+          "baseline_coverage": 0.9491666666666666,
+          "flagship_coverage": 0.9483333333333333,
+          "reason": "coverage outside nominal+/-0.03: vennfuse=0.9483, split_absolute=0.9492",
+          "status": "skipped"
+        }
+      },
+      "flagship_mean_width": 2.1006151369435524,
+      "gate": "G1",
+      "level": "P0",
+      "measured": 0.0557729857967655,
+      "n_participants": 4,
+      "participants": [
+        "grouped_hetero",
+        "heteroscedastic",
+        "homoscedastic",
+        "nonlinear"
+      ],
+      "passed": false,
+      "reason": "vennfuse is only 5.58% narrower than split_absolute (threshold 8.0%)",
+      "skipped": [
+        "covariate_shift",
+        "small_calib"
+      ],
+      "threshold": 0.08
+    },
+    "G2": {
+      "baseline_cov_w": 0.16899836690255854,
+      "dataset": "grouped_hetero",
+      "flagship_cov_w": 0.03216220133804948,
+      "gate": "G2",
+      "level": "P1",
+      "measured": 0.8096892773135871,
+      "passed": true,
+      "reason": "CoV-W 0.1690 -> 0.0322 (81.0% reduction, threshold 20%)",
+      "threshold": 0.2
+    },
+    "G3": {
+      "aci_mean_width": 1.3179832309451236,
+      "aci_tail_coverage": 0.8833333333333333,
+      "coverage_gain": 0.03750000000000009,
+      "coverage_ok": true,
+      "fixed_mean_width": 1.1725419079917203,
+      "fixed_tail_coverage": 0.8458333333333332,
+      "gate": "G3",
+      "level": "P0/P1",
+      "measured": 0.03750000000000009,
+      "passed": true,
+      "reason": "tail coverage 0.8458 -> 0.8833 (+3.75pp, need +3pp); width ratio 1.124 (max 1.25)",
+      "threshold": 0.03,
+      "width_ok": true,
+      "width_ratio": 1.1240393387751137,
+      "width_threshold": 1.25
+    },
+    "G5": {
+      "gate": "G5",
+      "level": "P0",
+      "measured": 0.0,
+      "n_compared": 1332,
+      "passed": true,
+      "reason": "1332 values compared, max abs diff = 0.0",
+      "threshold": 0.0
+    },
+    "all_passed": false,
+    "blocking": [
+      "G1"
+    ]
+  },
+  "invariant_checks": {
+    "cells_checked": 144,
+    "cells_missing": 0,
+    "row_checks": 144,
+    "violations": []
+  },
+  "invariant_checks_performed": 144,
+  "invariant_violations": []
+}

@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "confforge"
+version = "0.1.0"
+description = "Distribution-free predictive inference: conformal prediction intervals and sets, deterministic and offline-capable."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "晨星" }]
+keywords = ["conformal-prediction", "uncertainty-quantification", "prediction-intervals"]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=2.0,<3",
+    "scipy>=1.14",
+    "scikit-learn>=1.5",
+]
+
+[project.optional-dependencies]
+backend = ["mapie>=1.0"]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6"]
+
+[project.scripts]
+confforge = "cli:main"
+
+[tool.setuptools]
+packages = ["core", "data", "methods", "eval", "pipeline"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = ["ignore::UserWarning", "ignore::FutureWarning"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "NPY", "UP", "B", "C4", "SIM", "RUF"]
+ignore = [
+    "E501",    # long lines are handled by the formatter
+    "RUF001",  # ambiguous unicode characters in comments (we use them deliberately)
+    "RUF002",
+    "RUF003",
+    "SIM108",  # ternary rewrites hurt readability in numeric code
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.coverage.run]
+source = ["core", "data", "methods", "eval", "pipeline"]
+omit = ["*/__init__.py"]
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if TYPE_CHECKING:", "raise NotImplementedError"]
